@@ -1,0 +1,13 @@
+from django.urls import path
+from . import views
+
+app_name = 'onlinecourse'
+urlpatterns = [
+    # Các URL khác của bạn...
+    
+    # URL cho hàm submit
+    path('<int:course_id>/submit/', views.submit, name='submit'),
+    
+    # URL cho hàm show_exam_result
+    path('<int:course_id>/submission/<int:submission_id>/result/', views.show_exam_result, name='show_exam_result'),
+]
